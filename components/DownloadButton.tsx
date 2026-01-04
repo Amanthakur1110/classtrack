@@ -4,7 +4,7 @@ import AndroidIcon from './icons/AndroidIcon';
 const DownloadButton: React.FC = () => {
     return (
         <a
-            href="/apk/classtrack.apk"
+            href="https://github.com/Amanthakur1110/classtrack/releases/download/classtrack/classtrack.apk"
             download="classtrack.apk"
             className="group relative inline-flex items-center justify-center px-10 py-5 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden transition-all duration-500 hover:border-white/20 hover:bg-white/10 hover:shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)] transform hover:-translate-y-1 active:scale-95"
         >
