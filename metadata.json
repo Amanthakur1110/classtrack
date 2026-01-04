@@ -1,0 +1,5 @@
+{
+  "name": "ClassTrack Deep Link",
+  "description": "A modern, mobile-first frontend website to handle deep linking and provide a download fallback for the ClassTrack Android application.",
+  "requestFramePermissions": []
+}
