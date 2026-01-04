@@ -12,7 +12,7 @@ export interface Feature {
 export const APP_FEATURES: Feature[] = [
     {
         id: 'schedule',
-        screenshot: '/screenshots/screen1.jpeg',
+        screenshot: '/screenshots/home_blue.jpeg',
         title: 'Smart Scheduling',
         description: 'Organize your classes with our intuitive automated scheduler.',
         icon: 'calendar',
@@ -21,46 +21,47 @@ export const APP_FEATURES: Feature[] = [
     },
     {
         id: 'sharing',
-        screenshot: '/screenshots/screen2.jpeg',
+        screenshot: '/screenshots/home_green.jpeg',
         title: 'Instant Sharing',
         description: 'Share your timetable with friends and classmates in one tap.',
         icon: 'share',
-        color: '#f472b6', // Pink-400
+        color: '#11df56ff', // Pink-400
         gradient: 'from-pink-500 to-rose-400'
     },
     {
         id: 'reminders',
-        screenshot: '/screenshots/screen3.jpeg',
+        screenshot: '/screenshots/home_grey.jpeg',
         title: 'Smart Reminders',
         description: 'Never miss a class with customizable notifications and alerts.',
         icon: 'bell',
-        color: '#fbbf24', // Amber-400
+        color: '#c4c2beff', // Amber-400
         gradient: 'from-amber-400 to-orange-500'
     },
     {
         id: 'analytics',
-        screenshot: '/screenshots/screen4.jpeg',
+        screenshot: '/screenshots/attendence.jpeg',
         title: 'Attendance Tracking',
         description: 'Keep track of your attendance and manage your academic goals.',
         icon: 'chart',
-        color: '#10b981', // Emerald-500
+        color: '#40cf08ff', // Emerald-500
         gradient: 'from-emerald-400 to-green-600'
     },
     {
         id: 'Premium Ui ',
-        screenshot: '/screenshots/screen4.jpeg',
+        screenshot: '/screenshots/setting.jpeg',
         title: 'Premium Ui',
         description: 'Change Color What Ever You Like.',
         icon: 'chart',
-        color: '#10b981', // Emerald-500
+        color: '#34c508ff', // Emerald-500
         gradient: 'from-emerald-400 to-green-600'
     }, {
         id: 'Lofi Focus Mode ',
-        screenshot: '/screenshots/screen4.jpeg',
+        screenshot: '/screenshots/lofimode.jpeg',
         title: 'Lofi Focus Mode',
         description: 'Study With Your Favourite Lofi Music.',
         icon: 'chart',
-        color: '#10b981', // Emerald-500
+        color: '#1967dbff', // Emerald-500
         gradient: 'from-emerald-400 to-green-600'
     }
+
 ];

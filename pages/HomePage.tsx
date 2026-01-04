@@ -140,6 +140,28 @@ const HomePage: React.FC = () => {
                     </div>
                 </div>
 
+                {/* Minimal Footer */}
+                <footer className="relative z-20 mt-0 pb-0">
+                    <div className="text-center space-y-3 text-white/30 text-xs tracking-wide">
+
+                        {/* GitHub */}
+                        <a
+                            href="https://github.com/amanthakur1110"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-white/50 transition-colors"
+                        >
+                            github.com/amanthakur1110
+                        </a>
+
+                        {/* Copyright */}
+                        <p>
+                            © {new Date().getFullYear()} ClassTrack. Designed & built by Aman Thakur.
+                        </p>
+
+                    </div>
+                </footer>
+
 
 
 

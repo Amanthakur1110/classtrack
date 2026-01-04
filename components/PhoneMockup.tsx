@@ -8,34 +8,63 @@ interface PhoneMockupProps {
 
 const PhoneMockup: React.FC<PhoneMockupProps> = ({ currentIndex, screenshots }) => {
     return (
-        <div className="relative w-[280px] h-[580px] md:w-[320px] md:h-[640px] mx-auto z-10 select-none perspective-[2000px]">
-            {/* Reflection behind phone */}
-            <div className="absolute -inset-10 bg-gradient-to-tr from-white/5 via-transparent to-white/5 blur-3xl rounded-full opacity-30 animate-pulse"></div>
+        <div className="relative mx-auto w-[280px] h-[580px] md:w-[320px] md:h-[640px] perspective-[2200px] select-none">
 
-            {/* Phone Frame */}
-            <div className="w-full h-full bg-[#0f172a] rounded-[3.5rem] p-3 border-[8px] border-[#1e293b] ring-1 ring-white/20 relative transform-style-3d rotate-y-[-12deg] rotate-x-[5deg] shadow-[50px_50px_100px_rgba(0,0,0,0.7),-10px_-10px_30px_rgba(255,255,255,0.02)] transition-all duration-700 hover:rotate-y-[-5deg] hover:rotate-x-[2deg] hover:scale-[1.03]">
+            {/* Ambient Light Halo */}
+            <div className="absolute -inset-20 rounded-full bg-gradient-to-tr from-indigo-500/10 via-cyan-400/5 to-fuchsia-500/10 blur-3xl opacity-60"></div>
 
-                {/* Speaker/Notch Area */}
-                
+            {/* Phone Body */}
+            <div className="
+    relative w-full h-full rounded-[3.5rem] p-[10px]
+    bg-gradient-to-b from-slate-900 via-slate-950 to-black
+    border border-white/10
+    shadow-[0_60px_120px_rgba(0,0,0,0.8)]
+    transform-style-3d
+    rotate-y-[-14deg] rotate-x-[6deg]
+    transition-all duration-700 ease-out
+    hover:rotate-y-[-6deg] hover:rotate-x-[2deg] hover:scale-[1.04]
+  ">
 
-                {/* Inner Screen Border */}
-                <div className="w-full h-full bg-black rounded-[2.8rem] overflow-hidden relative shadow-[inset_0_0_20px_rgba(0,0,0,0.8)] border border-white/5">
-                    {/* Screen content */}
+                {/* Metallic Rim */}
+                <div className="absolute inset-0 rounded-[3.5rem] ring-1 ring-white/20 pointer-events-none"></div>
+
+                {/* Screen */}
+                <div className="
+      relative w-full h-full rounded-[2.8rem] overflow-hidden
+      bg-black border border-white/5
+      shadow-[inset_0_0_30px_rgba(0,0,0,0.9)]
+    ">
                     <ScreenshotCarousel currentIndex={currentIndex} screenshots={screenshots} />
+
+                    {/* Screen Reflection */}
+                    <div className="
+        absolute inset-0 pointer-events-none
+        bg-gradient-to-tr from-white/12 via-transparent to-transparent
+        opacity-40
+      " />
                 </div>
 
-                {/* Realistic Side Buttons */}
-                <div className="absolute -left-[10px] top-32 w-[2px] h-12 bg-[#334155] rounded-l-sm border-l border-white/20 shadow-lg"></div>
-                <div className="absolute -left-[10px] top-48 w-[2px] h-12 bg-[#334155] rounded-l-sm border-l border-white/20 shadow-lg"></div>
-                <div className="absolute -right-[10px] top-40 w-[2px] h-20 bg-[#334155] rounded-r-sm border-r border-white/20 shadow-lg"></div>
+                {/* Side Buttons */}
+                <div className="absolute -left-[8px] top-36 h-14 w-[2px] bg-gradient-to-b from-slate-300/40 to-slate-600/40 rounded-full" />
+                <div className="absolute -left-[8px] top-56 h-14 w-[2px] bg-gradient-to-b from-slate-300/40 to-slate-600/40 rounded-full" />
+                <div className="absolute -right-[8px] top-44 h-20 w-[2px] bg-gradient-to-b from-slate-300/40 to-slate-600/40 rounded-full" />
 
-                {/* Screen Gloss Overlay */}
-                <div className="absolute inset-2 top-10 bottom-10 rounded-[2.5rem] bg-gradient-to-tr from-white/10 via-transparent to-transparent pointer-events-none z-30 opacity-50"></div>
+                {/* Edge Glow */}
+                <div className="
+      absolute inset-0 rounded-[3.5rem]
+      bg-gradient-to-tr from-indigo-400/10 via-transparent to-cyan-400/10
+      pointer-events-none
+    " />
             </div>
 
-            {/* Phone Stand Shadow */}
-            <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[80%] h-10 bg-black/40 blur-2xl rounded-[100%] transform -rotate-x-12"></div>
+            {/* Floating Shadow */}
+            <div className="
+    absolute -bottom-12 left-1/2 -translate-x-1/2
+    w-[85%] h-12
+    bg-black/50 blur-3xl rounded-full
+  " />
         </div>
+
     );
 };
 
