@@ -12,7 +12,7 @@ export interface Feature {
 export const APP_FEATURES: Feature[] = [
     {
         id: 'schedule',
-        screenshot: '/screenshots/home_blue.jpeg',
+        screenshot: 'https://i.postimg.cc/8k4sMsjq/home-blue.jpg',
         title: 'Smart Scheduling',
         description: 'Organize your classes with our intuitive automated scheduler.',
         icon: 'calendar',
@@ -21,7 +21,7 @@ export const APP_FEATURES: Feature[] = [
     },
     {
         id: 'sharing',
-        screenshot: '/screenshots/home_green.jpeg',
+        screenshot: 'https://i.postimg.cc/kMsDKD2P/home-green.jpg',
         title: 'Instant Sharing',
         description: 'Share your timetable with friends and classmates in one tap.',
         icon: 'share',
@@ -30,7 +30,7 @@ export const APP_FEATURES: Feature[] = [
     },
     {
         id: 'reminders',
-        screenshot: '/screenshots/home_grey.jpeg',
+        screenshot: 'https://i.postimg.cc/9XbzZzD5/home-grey.jpg',
         title: 'Smart Reminders',
         description: 'Never miss a class with customizable notifications and alerts.',
         icon: 'bell',
@@ -39,7 +39,7 @@ export const APP_FEATURES: Feature[] = [
     },
     {
         id: 'analytics',
-        screenshot: '/screenshots/attendence.jpeg',
+        screenshot: 'https://i.postimg.cc/HWzjXjV2/attendence.jpg',
         title: 'Attendance Tracking',
         description: 'Keep track of your attendance and manage your academic goals.',
         icon: 'chart',
@@ -48,7 +48,7 @@ export const APP_FEATURES: Feature[] = [
     },
     {
         id: 'Premium Ui ',
-        screenshot: '/screenshots/setting.jpeg',
+        screenshot: 'https://i.postimg.cc/9Ff0pV7K/setting.jpg',
         title: 'Premium Ui',
         description: 'Change Color What Ever You Like.',
         icon: 'chart',
@@ -56,7 +56,7 @@ export const APP_FEATURES: Feature[] = [
         gradient: 'from-emerald-400 to-green-600'
     }, {
         id: 'Lofi Focus Mode ',
-        screenshot: '/screenshots/lofimode.jpeg',
+        screenshot: 'https://i.postimg.cc/ZKqncZdg/lofimode.jpg',
         title: 'Lofi Focus Mode',
         description: 'Study With Your Favourite Lofi Music.',
         icon: 'chart',
