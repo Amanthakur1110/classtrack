@@ -3,6 +3,7 @@ import PhoneMockup from '../components/PhoneMockup';
 import DownloadButton from '../components/DownloadButton';
 import FeatureCard from '../components/FeatureCard';
 import { APP_FEATURES } from '../config/features';
+import { getDownloadCount } from '../utils/counter';
 
 // Icons map
 const ICONS: Record<string, React.ReactNode> = {
@@ -22,6 +23,7 @@ const ICONS: Record<string, React.ReactNode> = {
 
 const HomePage: React.FC = () => {
     const [currentFeatureIndex, setCurrentFeatureIndex] = useState(0);
+    const [downloadCount, setDownloadCount] = useState<number | null>(null);
 
     // Feature Rotation Logic
     useEffect(() => {
@@ -30,6 +32,19 @@ const HomePage: React.FC = () => {
         }, 6000); // Slower rotation for better readability
 
         return () => clearInterval(timer);
+    }, []);
+
+    // Fetch initial count
+    useEffect(() => {
+        const fetchCount = async () => {
+            const count = await getDownloadCount();
+            setDownloadCount(count);
+        };
+        fetchCount();
+
+        // Refresh count every 30 seconds for "live" feel
+        const countInterval = setInterval(fetchCount, 30000);
+        return () => clearInterval(countInterval);
     }, []);
 
     if (!APP_FEATURES || APP_FEATURES.length === 0) {
@@ -68,12 +83,25 @@ const HomePage: React.FC = () => {
 
                         {/* Header Group */}
                         <div className="space-y-8 reveal-up" style={{ animationDelay: '200ms' }}>
-                            <div className="inline-flex items-center space-x-3 px-4 py-2 rounded-full glass border border-white/10 shadow-xl mb-4">
-                                <span className="relative flex h-2.5 w-2.5">
-                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
-                                </span>
-                                <span className="text-[10px] font-bold tracking-[0.2em] text-white/80 uppercase font-heading">Platform v1.0 is Live</span>
+                            <div className="flex flex-wrap items-center justify-center xl:justify-start gap-3 mb-4">
+                                <div className="inline-flex items-center space-x-3 px-4 py-2 rounded-full glass border border-white/10 shadow-xl">
+                                    <span className="relative flex h-2.5 w-2.5">
+                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                        <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+                                    </span>
+                                    <span className="text-[10px] font-bold tracking-[0.2em] text-white/80 uppercase font-heading">Platform v1.0 is Live</span>
+                                </div>
+
+                                {downloadCount !== null && (
+                                    <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 shadow-lg backdrop-blur-md">
+                                        <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
+                                        </svg>
+                                        <span className="text-[10px] font-bold text-blue-400 uppercase tracking-wider">
+                                            {downloadCount.toLocaleString()} Downloads
+                                        </span>
+                                    </div>
+                                )}
                             </div>
 
                             <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-black tracking-tight leading-[0.95] font-heading">
@@ -88,7 +116,7 @@ const HomePage: React.FC = () => {
 
                             {/* CTA Group - Now below description */}
                             <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-8 pt-4">
-                                <DownloadButton />
+                                <DownloadButton onDownload={(newCount) => setDownloadCount(newCount)} />
                                 <div className="text-center sm:text-left border-l border-white/10 pl-8">
                                     <p className="text-xs font-bold text-white/30 uppercase tracking-[0.3em] font-heading mb-1">Coming Soon to</p>
                                     <span className="text-sm font-bold text-white/60">iOS & Web Platform</span>
