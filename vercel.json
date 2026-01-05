@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+        {
+            "source": "/api-counter/(.*)",
+            "destination": "https://api.counterapi.dev/$1"
+        }
+    ]
+}
